@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <tabs>
+        <driv translate="label">
+            <label>driv</label>
+            <sort_order>220</sort_order>
+        </driv>
+    </tabs>
+    <sections>
+        <richsnippets translate="label">
+            <label>Rich Snippets</label>
+            <tab>driv</tab>
+            <sort_order>130</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label">
+                    <class>open</class>
+                    <label>General</label>
+                    <sort_order>0</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enabled translate="label">
+                            <label>Enable Rich Snippets</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled>
+                        <review translate="label comment">
+                            <label>Enable Review &amp; Rating data</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[If you are not using reviews in your project, please disable this option for better performance.]]></comment>
+                        </review>
+                    </fields>
+                </general>
+
+                <attributes translate="label comment">
+                    <label>Attributes</label>
+                    <sort_order>100</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <comment><![CDATA[<p style="padding:15px 10px; border: 1px solid #e1e1e1; background: #fff;">If you're using different attributes for the ones listed below, please select them here so I could show the right content for the search engines.</p>]]></comment>
+                    <fields>
+                        <manufacturer translate="label">
+                            <label>Attribute for 'Manufacturer'</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>richsnippets/attributes</source_model>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </manufacturer>
+                        <color translate="label">
+                            <label>Attribute for 'Color'</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>richsnippets/attributes</source_model>
+                            <sort_order>120</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </color>
+                        <model translate="label">
+                            <label>Attribute for 'Model'</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>richsnippets/attributes</source_model>
+                            <sort_order>130</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </model>
+                    </fields>
+                </attributes>
+            </groups>
+        </richsnippets>
+    </sections>
+</config>

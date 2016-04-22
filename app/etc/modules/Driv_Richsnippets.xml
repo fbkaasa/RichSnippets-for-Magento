@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Driv_Richsnippets>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Driv_Richsnippets>
+    </modules>
+</config>

@@ -1,0 +1,7 @@
+<?php // check if module is enabled in our extension's backend configuration ?>
+<?php if(Mage::getStoreConfig('richsnippets/general/enabled')){ ?>
+	<script type="application/ld+json">
+		<?php // echo our JSON array ?>
+		<?php echo $this->getStructuredData(); ?>
+	</script>
+<?php } ?>

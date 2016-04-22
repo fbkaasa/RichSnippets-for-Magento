@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<layout>
+    <default>
+        
+    </default>
+    
+    <catalog_product_view>
+        <reference name="footer">
+            <block type="richsnippets/jsonld" name="richsnippets" after="-" template="richsnippets/index.phtml" />
+        </reference>
+    </catalog_product_view>
+</layout>

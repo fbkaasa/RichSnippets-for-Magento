@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Driv_Richsnippets>
+            <version>1.2.0</version>
+        </Driv_Richsnippets>
+    </modules>
+
+    <global>
+        <models>
+            <richsnippets>
+                <class>Driv_Richsnippets_Model</class>
+            </richsnippets>
+        </models>
+        <blocks>
+            <richsnippets>
+                <class>Driv_Richsnippets_Block</class>
+            </richsnippets>
+        </blocks>
+        <helpers>
+            <richsnippets>
+                <class>Driv_Richsnippets_Helper</class>
+            </richsnippets>
+        </helpers>
+    </global>
+
+    <frontend>
+        <layout>
+            <updates module="Driv_Richsnippets">
+                <richsnippets>
+                    <file>richsnippets.xml</file>
+                </richsnippets>
+            </updates>
+        </layout>
+    </frontend>
+
+    <adminhtml>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <richsnippets>
+                                            <title>Rich Snippets</title>
+                                        </richsnippets>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+
+    <default>
+        <richsnippets>
+            <general>
+                <enabled>1</enabled>
+                <review>1</review>
+            </general>
+            <attributes>
+                <manufacturer>manufacturer</manufacturer>
+                <color>color</color>
+                <model></model>
+            </attributes>
+        </richsnippets>
+    </default>
+</config>
