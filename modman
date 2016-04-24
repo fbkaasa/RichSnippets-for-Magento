@@ -6,6 +6,6 @@ app/code/local/Driv/Richsnippets/                           app/code/local/Driv/
 app/design/frontend/base/default/layout/richsnippets.xml    app/design/frontend/base/default/layout/richsnippets.xml
 app/design/frontend/base/default/template/richsnippets      app/design/frontend/base/default/template/richsnippets
 
-etc/modules/Driv_Richsnippets.xml                           etc/modules/Driv_Richsnippets.xml
+app/etc/modules/Driv_Richsnippets.xml                           app/etc/modules/Driv_Richsnippets.xml
 
-locale/en_US/Driv_Richsnippets.csv                          locale/en_US/Driv_Richsnippets.csv
+app/locale/en_US/Driv_Richsnippets.csv                          app/locale/en_US/Driv_Richsnippets.csv
