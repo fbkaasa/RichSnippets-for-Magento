@@ -95,7 +95,7 @@ class Driv_Richsnippets_Block_Jsonld extends Mage_Core_Block_Template
                 'image' => $_product->getImageUrl(),
                 'url' => $_product->getProductUrl(),
                 //'description' => trim(preg_replace('/\s+/', ' ', $this->stripTags($product->getShortDescription()))),
-                'description' => $descsnippet, //use Desc if Shortdesc not work
+                'description' => $descsnippet, //use full description if short description is empty
                 'offers' => array(
                     '@type' => 'Offer',
                     'availability' => $json['availability'],
