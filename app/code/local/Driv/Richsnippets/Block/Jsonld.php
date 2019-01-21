@@ -90,7 +90,7 @@ class Driv_Richsnippets_Block_Jsonld extends Mage_Core_Block_Template
                 '@context' => 'http://schema.org',
                 '@type' => 'Product',
                 'name' => $product->getName(),
-                'brand' => $_product->getAttributeText('manufacturer'),
+                'brand' => $product->getAttributeText('manufacturer'),
                 'sku' => $product->getSku(),
                 'image' => $product->getImageUrl(),
                 'url' => $product->getProductUrl(),
@@ -115,7 +115,7 @@ class Driv_Richsnippets_Block_Jsonld extends Mage_Core_Block_Template
                     'reviewCount' => $json['reviewCount']
                 );
                 $data['review'] = $reviewData;
-            }
+            } 
             // getting all attributes from "Attributes" section of or extension's config area...
             $attributes = Mage::getStoreConfig('richsnippets/attributes');
             // ... and putting them into $data array if they're not empty
