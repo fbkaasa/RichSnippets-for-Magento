@@ -85,7 +85,7 @@ class Driv_Richsnippets_Block_Jsonld extends Mage_Core_Block_Template
                 $descsnippet = Mage::helper('core/string')->substr(html_entity_decode(strip_tags($_product->getDescription())), 0, 165);
             }
 
-            // Final array with all basic product data
+            // Present all the data
             $data = array(
                 '@context' => 'http://schema.org',
                 '@type' => 'Product',
@@ -94,7 +94,6 @@ class Driv_Richsnippets_Block_Jsonld extends Mage_Core_Block_Template
                 'sku' => $_product->getSku(),
                 'image' => $_product->getImageUrl(),
                 'url' => $_product->getProductUrl(),
-                //'description' => trim(preg_replace('/\s+/', ' ', $this->stripTags($product->getShortDescription()))),
                 'description' => $descsnippet, //use full description if short description is empty
                 'offers' => array(
                     '@type' => 'Offer',
@@ -105,7 +104,8 @@ class Driv_Richsnippets_Block_Jsonld extends Mage_Core_Block_Template
                     'url' => $_product->getProductUrl()
                 )
             );
-            // if reviews enabled - join it to $data array
+
+            // if reviews are enabled in magento admin - present it
             if ($review) {
                 $data['aggregateRating'] = array(
                     '@type' => 'AggregateRating',
@@ -116,15 +116,18 @@ class Driv_Richsnippets_Block_Jsonld extends Mage_Core_Block_Template
                 );
                 $data['review'] = $reviewData;
             } 
-            // getting all attributes from "Attributes" section of or extension's config area...
+
+            // This module has an admin interface, here is where those attributes are presented.
+            // Get the attributes
             $attributes = Mage::getStoreConfig('richsnippets/attributes');
-            // ... and putting them into $data array if they're not empty
+
+            // If ! empty, place them in an array
             foreach ($attributes AS $key => $value) {
                 if ($value) {
                     $data[$key] = $this->getAttributeValue($value);
                 }
             }
-            // return $data table in JSON format
+            // Return all the data which should be included in the schema json
 //            return json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
             return $data;
         }
