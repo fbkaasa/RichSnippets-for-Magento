@@ -3,19 +3,19 @@ class Driv_Richsnippets_Block_Jsonld extends Mage_Core_Block_Template
 {
     public function getProduct()
     {
-        $product = Mage::registry('current_product');
-        return ($product && $product->getEntityId()) ? $product : false;
+        $_product = Mage::registry('current_product');
+        return ($_product && $_product->getEntityId()) ? $_product : false;
     }
     public function getAttributeValue($attr)
     {
         $value = null;
-        $product = $this->getProduct();
-        if ($product) {
-            $type = $product->getResource()->getAttribute($attr)->getFrontendInput();
+        $_product = $this->getProduct();
+        if ($_product) {
+            $type = $_product->getResource()->getAttribute($attr)->getFrontendInput();
             if ($type == 'text' || $type == 'textarea') {
-                $value = $product->getData($attr);
+                $value = $_product->getData($attr);
             } elseif ($type == 'select') {
-                $value = $product->getAttributeText($attr) ? $product->getAttributeText($attr) : '';
+                $value = $_product->getAttributeText($attr) ? $_product->getAttributeText($attr) : '';
             }
         }
         return $value;
@@ -23,15 +23,15 @@ class Driv_Richsnippets_Block_Jsonld extends Mage_Core_Block_Template
     public function getStructuredData()
     {
         // get product
-        $product = $this->getProduct();
-        // check if $product exists
-        if ($product) {
+        $_product = $this->getProduct();
+        // check if $_product exists
+        if ($_product) {
             $categoryName = Mage::registry('current_category') ? Mage::registry('current_category')->getName() : '';
-            $productId = $product->getEntityId();
+            $productId = $_product->getEntityId();
             $storeId = Mage::app()->getStore()->getId();
             $currencyCode = Mage::app()->getStore()->getCurrentCurrencyCode();
             $json = array(
-                'availability' => $product->isAvailable() ? 'http://schema.org/InStock' : 'http://schema.org/OutOfStock',
+                'availability' => $_product->isAvailable() ? 'http://schema.org/InStock' : 'http://schema.org/OutOfStock',
                 'category' => $categoryName
             );
             // check if reviews are enabled in extension's backend configuration
@@ -74,35 +74,35 @@ class Driv_Richsnippets_Block_Jsonld extends Mage_Core_Block_Template
                     }
                 }
                 // let's put review data into $json array
-                $json['reviewCount'] = $reviewSummary->getTotalReviews($product->getId(), true);
+                $json['reviewCount'] = $reviewSummary->getTotalReviews($_product->getId(), true);
                 $json['ratingValue'] = number_format(floor(($ratingData['rating_summary'] / 20) * 2) / 2, 1); // average rating (1-5 range)
                 $json['review'] = $reviewData;
             }
             //use Desc if Shortdesc not work
-            if ($product->getShortDescription()) {
-                $descsnippet = html_entity_decode(strip_tags($product->getShortDescription()));
+            if ($_product->getShortDescription()) {
+                $descsnippet = html_entity_decode(strip_tags($_product->getShortDescription()));
             } else {
-                $descsnippet = Mage::helper('core/string')->substr(html_entity_decode(strip_tags($product->getDescription())), 0, 165);
+                $descsnippet = Mage::helper('core/string')->substr(html_entity_decode(strip_tags($_product->getDescription())), 0, 165);
             }
 
             // Final array with all basic product data
             $data = array(
                 '@context' => 'http://schema.org',
                 '@type' => 'Product',
-                'name' => $product->getName(),
-                'brand' => $product->getAttributeText('manufacturer'),
-                'sku' => $product->getSku(),
-                'image' => $product->getImageUrl(),
-                'url' => $product->getProductUrl(),
+                'name' => $_product->getName(),
+                'brand' => $_product->getAttributeText('manufacturer'),
+                'sku' => $_product->getSku(),
+                'image' => $_product->getImageUrl(),
+                'url' => $_product->getProductUrl(),
                 //'description' => trim(preg_replace('/\s+/', ' ', $this->stripTags($product->getShortDescription()))),
                 'description' => $descsnippet, //use Desc if Shortdesc not work
                 'offers' => array(
                     '@type' => 'Offer',
                     'availability' => $json['availability'],
-                    'price' => number_format((float)$product->getFinalPrice(), 2, '.', ''),
+                    'price' => number_format((float)$_product->getFinalPrice(), 2, '.', ''),
                     'priceCurrency' => $currencyCode,
                     'category' => $json['category'],
-                    'url' => $product->getProductUrl()
+                    'url' => $_product->getProductUrl()
                 )
             );
             // if reviews enabled - join it to $data array
