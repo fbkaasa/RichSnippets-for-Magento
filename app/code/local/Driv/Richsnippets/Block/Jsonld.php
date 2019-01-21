@@ -84,11 +84,13 @@ class Driv_Richsnippets_Block_Jsonld extends Mage_Core_Block_Template
             } else {
                 $descsnippet = Mage::helper('core/string')->substr(html_entity_decode(strip_tags($product->getDescription())), 0, 165);
             }
+
             // Final array with all basic product data
             $data = array(
                 '@context' => 'http://schema.org',
                 '@type' => 'Product',
                 'name' => $product->getName(),
+                'brand' => $_product->getAttributeText('manufacturer'),
                 'sku' => $product->getSku(),
                 'image' => $product->getImageUrl(),
                 'url' => $product->getProductUrl(),
@@ -99,7 +101,8 @@ class Driv_Richsnippets_Block_Jsonld extends Mage_Core_Block_Template
                     'availability' => $json['availability'],
                     'price' => number_format((float)$product->getFinalPrice(), 2, '.', ''),
                     'priceCurrency' => $currencyCode,
-                    'category' => $json['category']
+                    'category' => $json['category'],
+                    'url' => $product->getProductUrl()
                 )
             );
             // if reviews enabled - join it to $data array
