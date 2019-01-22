@@ -1,5 +1,5 @@
 <?php
-class Driv_Richsnippets_Block_Jsonld extends Mage_Core_Block_Template
+class Visma_Richsnippets_Block_Jsonld extends Mage_Core_Block_Template
 {
     public function getProduct()
     {

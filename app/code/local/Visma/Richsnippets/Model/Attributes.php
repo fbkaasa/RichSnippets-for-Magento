@@ -1,6 +1,6 @@
 <?php
 
-class Driv_Richsnippets_Model_Attributes
+class Visma_Richsnippets_Model_Attributes
 {
 
     public function toOptionArray()

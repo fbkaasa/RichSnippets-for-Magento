@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
     <tabs>
-        <driv translate="label">
-            <label>driv</label>
+        <visma translate="label">
+            <label>visma</label>
             <sort_order>220</sort_order>
-        </driv>
+        </visma>
     </tabs>
     <sections>
         <richsnippets translate="label">
             <label>Rich Snippets</label>
-            <tab>driv</tab>
+            <tab>visma</tab>
             <sort_order>130</sort_order>
             <show_in_default>1</show_in_default>
             <show_in_website>1</show_in_website>

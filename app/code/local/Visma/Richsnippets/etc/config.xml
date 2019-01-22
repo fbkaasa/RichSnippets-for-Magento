@@ -1,32 +1,32 @@
 <?xml version="1.0"?>
 <config>
     <modules>
-        <Driv_Richsnippets>
+        <Visma_Richsnippets>
             <version>2.0.0</version>
-        </Driv_Richsnippets>
+        </Visma_Richsnippets>
     </modules>
 
     <global>
         <models>
             <richsnippets>
-                <class>Driv_Richsnippets_Model</class>
+                <class>Visma_Richsnippets_Model</class>
             </richsnippets>
         </models>
         <blocks>
             <richsnippets>
-                <class>Driv_Richsnippets_Block</class>
+                <class>Visma_Richsnippets_Block</class>
             </richsnippets>
         </blocks>
         <helpers>
             <richsnippets>
-                <class>Driv_Richsnippets_Helper</class>
+                <class>Visma_Richsnippets_Helper</class>
             </richsnippets>
         </helpers>
     </global>
 
     <frontend>
         <layout>
-            <updates module="Driv_Richsnippets">
+            <updates module="Visma_Richsnippets">
                 <richsnippets>
                     <file>richsnippets.xml</file>
                 </richsnippets>

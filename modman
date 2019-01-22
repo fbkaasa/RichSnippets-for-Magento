@@ -1,11 +1,11 @@
-## Modman file for Driv_Richsnippets for Magento
+## Modman file for Visma_Richsnippets for Magento
 
 ## Code
-app/code/local/Driv/Richsnippets/                           app/code/local/Driv/Richsnippets/
+app/code/local/Visma/Richsnippets/                           app/code/local/Visma/Richsnippets/
 
 app/design/frontend/base/default/layout/richsnippets.xml    app/design/frontend/base/default/layout/richsnippets.xml
 app/design/frontend/base/default/template/richsnippets      app/design/frontend/base/default/template/richsnippets
 
-app/etc/modules/Driv_Richsnippets.xml                           app/etc/modules/Driv_Richsnippets.xml
+app/etc/modules/Visma_Richsnippets.xml                           app/etc/modules/Visma_Richsnippets.xml
 
-app/locale/en_US/Driv_Richsnippets.csv                          app/locale/en_US/Driv_Richsnippets.csv
+app/locale/en_US/Visma_Richsnippets.csv                          app/locale/en_US/Visma_Richsnippets.csv
