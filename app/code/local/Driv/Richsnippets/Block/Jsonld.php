@@ -90,7 +90,6 @@ class Driv_Richsnippets_Block_Jsonld extends Mage_Core_Block_Template
                 '@context' => 'http://schema.org',
                 '@type' => 'Product',
                 'name' => $_product->getName(),
-                'brand' => $_product->getAttributeText('manufacturer'),
                 'sku' => $_product->getSku(),
                 'image' => $_product->getImageUrl(),
                 'url' => $_product->getProductUrl(),
