@@ -1,6 +1,6 @@
 ## Modman file for Visma_Richsnippets for Magento
 
-## Code
+### Code
 app/code/local/Visma/Richsnippets/                           app/code/local/Visma/Richsnippets/
 
 app/design/frontend/base/default/layout/richsnippets.xml    app/design/frontend/base/default/layout/richsnippets.xml
